@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
@@ -70,7 +69,7 @@ const Registerchoice = () => {
             Use Mobile number for registration
           </label>
         </div>
-        <div className="radio-btn">
+        {/* <div className="radio-btn">
           <input
             type="radio"
             id="emailMethod"
@@ -79,10 +78,12 @@ const Registerchoice = () => {
             onChange={() => handleMethodChange("email")}
           />
           <label htmlFor="emailMethod">Use email for registration</label>
-        </div>
+        </div> */}
         {registrationMethod === "mobile" && (
           <>
-            <label className="label-field" htmlFor="mobile_number">Mobile number</label>
+            <label className="label-field" htmlFor="mobile_number">
+              Mobile number
+            </label>
             <input
               type="number"
               className="text-field"
@@ -93,9 +94,11 @@ const Registerchoice = () => {
             />
           </>
         )}
-        {registrationMethod === "email" && (
+        {/* {registrationMethod === "email" && (
           <>
-            <label className="label-field" htmlFor="email">Email Adddress</label>
+            <label className="label-field" htmlFor="email">
+              Email Adddress
+            </label>
             <input
               type="email"
               className="text-field"
@@ -105,13 +108,17 @@ const Registerchoice = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
           </>
-        )}
-        <br/>
-        <button className="register-btn" onClick={handleSendOTP}>Send OTP</button>
+        )} */}
+        <br />
+        <button className="register-btn" onClick={handleSendOTP}>
+          Send OTP
+        </button>
+        <p>
+          Already have an account? <a href="/login"> Login</a>
+        </p>
       </form>
     </div>
   );
 };
 
 export default Registerchoice;
-

@@ -6,7 +6,7 @@ import { useAuth } from "../../context/auth_context";
 
 const Mobileregister = () => {
   const navigate = useNavigate();
-  const { mobileNumber, setMobileNumber } = useAuth();
+  const { mobileNumber, setMobileNumber, login } = useAuth();
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -36,6 +36,9 @@ const Mobileregister = () => {
         })
         .then((res) => {
           if (res.status === 201) {
+            const { token } = res.data;
+            localStorage.setItem("jwt", token);
+            login(token);
             navigate("/");
           }
         })
@@ -51,7 +54,9 @@ const Mobileregister = () => {
     <div className="form-container">
       <h1 className="heading-color">Mobile Register</h1>
       <form onSubmit={handleSubmit}>
-        <label className="label-field" htmlFor="username">Username</label>
+        <label className="label-field" htmlFor="username">
+          Username
+        </label>
         <input
           className="text-field"
           type="text"
@@ -59,7 +64,9 @@ const Mobileregister = () => {
           placeholder="Enter username"
           onChange={handleChange}
         />
-        <label className="label-field" htmlFor="password">Password</label>
+        <label className="label-field" htmlFor="password">
+          Password
+        </label>
         <input
           className="text-field"
           type="password"
@@ -67,7 +74,9 @@ const Mobileregister = () => {
           placeholder="Enter password"
           onChange={handleChange}
         />
-        <label className="label-field" htmlFor="Confirm Password">Confirm Password</label>
+        <label className="label-field" htmlFor="Confirm Password">
+          Confirm Password
+        </label>
         <input
           className="text-field"
           type="text"
@@ -80,7 +89,7 @@ const Mobileregister = () => {
             <p>Passwords do not match.</p>
           </div>
         )}
-        <br/>
+        <br />
         <button className="register-btn" type="submit">
           Register
         </button>

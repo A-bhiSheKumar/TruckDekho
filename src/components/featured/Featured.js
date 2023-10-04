@@ -52,30 +52,30 @@ const Featured = () => {
         <div className="inner-content-modal">
         <div className="inner-content">
         <img className="img"  src="https://images.91wheels.com//assets/b_images/main/models/profile/profile1662380769.jpg?width=540" alt=""/>
-        <div class="box-inner-title">Pune</div>
+        <div className="box-inner-title">Pune</div>
         </div>
         <div className="inner-content">
         <img  className="img" src="https://images.91wheels.com//assets/b_images/main/models/profile/profile1662380769.jpg?width=540" alt=""/>
-        <div class="box-inner-title">Banglore</div>
+        <div className="box-inner-title">Banglore</div>
         </div>
       
         <div className="inner-content">
         <img className="img" src="https://images.91wheels.com//assets/b_images/main/models/profile/profile1662380769.jpg?width=540" alt=""/>
-        <div class="box-inner-title">Jaipur</div>
+        <div className="box-inner-title">Jaipur</div>
         </div>
         
         <div className="inner-content">
         <img className="img" src="https://images.91wheels.com//assets/b_images/main/models/profile/profile1662380769.jpg?width=540" alt=""/>
-        <div class="box-inner-title">Mumbai</div>
+        <div className="box-inner-title">Mumbai</div>
         </div>
    
         <div className="inner-content">
         <img className="img" src="https://images.91wheels.com//assets/b_images/main/models/profile/profile1662380769.jpg?width=540" alt=""/>
-        <div class="box-inner-title">Dehli</div>
+        <div className="box-inner-title">Dehli</div>
         </div>
         <div className="inner-content">
         <img className="img" src="https://images.91wheels.com//assets/b_images/main/models/profile/profile1662380769.jpg?width=540" alt=""/>
-        <div class="box-inner-title">Maharastra</div>
+        <div className="box-inner-title">Maharastra</div>
         </div>
         </div>
         </div>

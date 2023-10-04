@@ -24,7 +24,6 @@ const Login = () => {
       .then((res) => {
         if (res.status === 200) {
           const { token } = res.data;
-          console.table(res);
           localStorage.setItem("jwt", token);
           login(token);
           navigate("/");
@@ -36,50 +35,58 @@ const Login = () => {
   };
 
   return (
-    <div className="form-container">
-      <div className="">
-        <h1 className="heading-color ">Login Here</h1>
-        <form onSubmit={handleSubmit} className="">
-          <h4 className="heading-color1">Use Registered Email to login</h4>
+    <div>
+      {localStorage.getItem("jwt") ? (
+        <div className="loggedin-container">
+          <h1>You are Already logged in!!</h1>
+        </div>
+      ) : (
+        <div className="form-container">
           <div className="">
-            <input
-              type="email"
-              placeholder="Email"
-              name="email"
-              onChange={(e) => setEmail(e.target.value)}
-              className="text-field"
-            />
+            <h1 className="heading-color ">Login Here</h1>
+            <form onSubmit={handleSubmit} className="">
+              {/* <h4 className="heading-color1">Use Registered Email to login</h4>
+              <div className="">
+                <input
+                  type="email"
+                  placeholder="Email"
+                  name="email"
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="text-field"
+                />
+              </div>
+              <br /> */}
+              <h4 className="heading-color1">Use Registered Mobile Number to login</h4>
+              <div className="">
+                <input
+                  type="number"
+                  placeholder="Mobile Number"
+                  name="mobile"
+                  onChange={(e) => setMobile(e.target.value)}
+                  className="text-field"
+                />
+              </div>
+              <div className="">
+                <input
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="text-field"
+                />
+              </div>
+              <br />
+              <button type="submit" className="register-btn">
+                Login
+              </button>
+              <p className="">
+                New to TruckDekho?
+                <a href="/registerchoice"> Register</a>
+              </p>
+            </form>
           </div>
-          <br />
-          <h4 className="heading-color1">Use Registered Mobile to login</h4>
-          <div className="">
-            <input
-              type="number"
-              placeholder="Mobile Number"
-              name="mobile"
-              onChange={(e) => setMobile(e.target.value)}
-              className="text-field"
-            />
-          </div>
-          <div className="">
-            <input
-              type="password"
-              placeholder="Password"
-              name="password"
-              onChange={(e) => setPassword(e.target.value)}
-              className="text-field"
-            />
-          </div>
-          <br />
-          <button type="submit" className="register-btn">
-            Login
-          </button>
-          <p className="">
-            New to TruckDekho?
-            <Link to="/register">Register</Link>
-          </p>
-        </form>
-      </div>
+        </div>
+      )}
     </div>
   );
 };
